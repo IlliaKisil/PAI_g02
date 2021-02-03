@@ -29,8 +29,7 @@ services:
             MYSQL_USER: '${DB_USERNAME}'
             MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     composer:
-        build:
-            context: .
-            dockerfile: docker/Composer.Dockerfile
+        image: composer
         volumes:
-            - ./:/var/www/RabbitBank
+           - .:/app
+        working_dir: /app
